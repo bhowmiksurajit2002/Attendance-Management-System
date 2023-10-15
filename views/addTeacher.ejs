@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+    <head>
+        <meta charset="utf-8" > 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <title>
+            1ST
+        </title>
+        
+    </head>
+    <body>
+        <div class="Navigation">
+            <h1> Attendence Management System </h1>
+          </div>
+          
+          <div class="createTeacher">
+            <form  action="/Admin/addTeacher" method="POST">
+                <ul>
+                    <li id="one">
+                        <span class="required">Firstname</span>
+                 
+                    <input type="text" required placeholder="Enter First Name" name="firstName">
+                </li>
+                
+                <li id="two">
+                    <span class="required">
+                        Lastname
+                    </span>
+                    
+                    <input type="text" placeholder="Enter Lastname" name="lastName">
+                </li>
+                    
+                    <li id="three">
+                        <span class="required">College Id</span>
+                       
+                        <input type="text" placeholder="Enter Id" name="college_Id">
+
+                    </li>
+                    
+                    <li id="four">
+                        <span class="required">Department</span>
+                       
+                        <select name="Department">
+                            <option value="cse">CSE</option>
+                            <option value="it">IT</option>
+                            <option value="ece">ECE</option>
+                            <option value="me">ME</option>
+                            <option value="aeie">AEIE</option>
+                        </select>
+                    </li>
+                   
+                    <li id="five">
+                        <span class="required">Mobile</span>
+                        <input type="text" placeholder="Enter Mobile no" name="Mobile">
+                    </li>
+                    
+                    <li id="six">
+                        <span class="required">User Id</span>
+                        <input type="text" placeholder="Enter User Id" name="usrId">
+                    </li>
+                   <li id="seven">
+                    <span class="required" >
+                        Password
+                    </span>
+                    <input type="text" placeholder="Enter password" name="Password">
+                   </li>
+                <li id="nine">
+                    <button type="submit" class="btn btn-success" >CREATE</button>
+                </li>
+                   
+                </ul>
+               
+            </form>
+
+
+          </div>
+
+          <div class="teacher-list-container">
+            <h1 id="heading">TEACHER LIST</h1>
+            <div class="table-container">
+            <table  >
+                <tr>
+                    <th>College Id</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Mobile</th>
+                    <th>usr Id</th>
+                    <th>Passwor</th>
+                    <th>Delete</th>
+                </tr>
+                
+                <% if(newTeachers!=null){ %>  
+                    <% Array.prototype.forEach.call(newTeachers, teacher =>{ %>
+                     <form action="/Admin/addTeacher/delete" method="POST">
+ 
+                 <tr> 
+                     
+                     <td><%= teacher.collegeId %></td>
+                     <td><%=teacher.fname.toUpperCase()  %>  <%= teacher.lname.toUpperCase() %></td>
+                     <td><%= teacher.dept.toUpperCase() %></td>
+                     <td><%= teacher.mobile.toUpperCase() %></td>
+                     <td><%= teacher.userId %></td>
+                     <td><%= teacher.password %></td>
+                     <td >
+                         <button type="submit" class="btn btn-transparent" name="button" value="<%= teacher._id %>">
+                             <i class="fa fa-trash" aria-hidden="true"  style="color:yellow"></i>
+                         </button>
+                         
+ 
+                         </td>
+                 </tr>
+             </form>
+                 <% });}%>
+                
+            </table>
+        </div>
+          </div>
+    </body>
+
+
+
+
+
+    <style>
+
+body{
+    margin:0;
+   border:5px solid white;
+    background-color: #034f84;
+    height:auto;
+}
+
+
+/* Navigation bar */
+.Navigation{
+  
+  position:relative;
+  background-color: green;
+  top:-5px;
+  height:55px;
+  width:100%;
+  color:aliceblue;
+  font-size: large;
+  text-align: center;
+  margin:0;
+  
+  
+}
+
+/*     CREATE AREA OF STUDENT             */
+.createTeacher{
+    position:relative;
+    left:108px;
+    background-color: antiquewhite;
+    height:371px;
+    width:84%;
+    margin:15px;
+    display: inline-block;
+    box-shadow: 10px 8px 17px 11px rgba(0, 0, 0, 0.2);
+    border:2px solid black;
+    border-radius: 0.5rem;
+}
+ul li{
+   list-style-type: none;
+}
+
+ul li:nth-child(even){
+    display: inline;
+}
+
+
+/*      FOR ALL INPUT TAG IN CREATE AREA            */
+ul li input{
+    
+    width:500px;
+    height:29px;
+}
+
+/*      FOR SELECT TAG IN CREATE AREA            */
+ul li select {
+    width:500px;
+    height:29px;
+}
+
+/*TO ADD  ASTERISK TO REAQUIRE */
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+
+
+/*     FIRST NAME             */
+#one{
+    position:relative;
+    top:35px;
+    left:-68px;
+}
+#one span{
+    position:relative;
+    top:-30px;
+    left:66px;
+}
+
+
+/*    LAST NAME              */
+
+#two{
+    position:relative;
+    left:489px;
+    top:5px;
+}
+
+#two span{
+    position:relative;
+    top:-30px;
+    left:63px;
+}
+
+/*    ROLL NO              */
+#three{
+    position:relative;
+    top:41px;
+    left:-75px;
+}
+#three span{
+    position:relative;
+    top:-31px;
+    left:70px;
+}
+
+
+/*           SEMESTER       */
+#four{
+    position:relative;
+    left:473px;
+    top:12px;
+}
+
+#four span{
+    position:relative;
+    top:-30px;
+    left:80px;
+}
+
+/*        MOBILE          */
+#five{
+    position:relative;
+    top:45px;
+    left:-51px;
+}
+#five span{
+    position:relative;
+    top:-27px;
+    left:48px;
+}
+
+
+/*     USER ID             */
+#six{
+    position:relative;
+    left:506px;
+    top:16px;
+}
+
+#six span{
+    position:relative;
+    top:-30px;
+    left:50px;
+}
+
+
+/*       password           */
+#seven{
+    position:relative;
+    top:54px;
+    left:-67px;
+}
+
+#seven span{
+    position:relative;
+    top:-30px;
+    left:66px;
+}
+
+
+/*          CREATE BUTTON        */
+#nine{
+    position:relative;
+    left:950px;
+    top:87px;
+}
+
+.teacher-list-container{
+    position:relative;
+    left:108px;
+    top:20px;
+    background-color: antiquewhite;
+    height:auto;
+    width:84%;
+    margin:15px;
+    display: inline-block;
+    box-shadow: 10px 8px 17px 11px rgba(0, 0, 0, 0.2);
+    border:2px solid black;
+    border-radius: 0.5rem;
+}
+
+#heading{
+    position: absolute;
+    left:25%;
+    top:-25px;
+    color:#034f84;
+    margin-bottom: 50px;
+    padding: 100px;
+    
+}
+
+.table-container{
+    position:relative;
+    left:98px;
+    top:164px;
+}
+table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color: white;
+    background-color: rgb(79, 65, 141);
+    text-align: center;
+  }
+  
+
+  table{
+    width:76%;
+   
+  }
+
+  table tr{
+    height:45px;
+  }
+  
+    </style>
+</html> 

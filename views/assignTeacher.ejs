@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+    <head>
+        <meta charset="utf-8" > 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <title>
+            1ST
+        </title>
+        
+    </head>
+    <body>
+        <div class="Navigation">
+           <span> <i class="fa-solid fa-bars fa-2x"></i></span>
+            <h1>  Attendence Management System </h1>
+          </div>
+          
+          <div class="createStudent">
+            <form  action="/Admin/assignTeacher" method="POST">
+                <ul>
+                    <li id="one">
+                        <span class="required">Department</span>
+                 
+                    <select name="Department">
+                        <option value="cse">CSE</option>
+                        <option value="it">IT</option>
+                        <option value="ece">ECE</option>
+                        <option value="me">ME</option>
+                        <option value="aeie">AEIE</option>
+                    </select>
+                </li>
+                
+                <li id="two">
+                    <span class="required">
+                        Year
+                    </span>
+                    
+                    <select name="year">
+                        <option value="first">FIRST</option>
+                        <option value="second">SECOND</option>
+                        <option value="third">THIRD</option>
+                        <option value="fourth">FOURTH</option>
+                    </select>
+                </li>
+                    
+                    <li id="three">
+                        <span class="required">Total Subjects</span>
+                       
+                        <input type="text" placeholder="Enter Total subjs" name="totalSubjs">
+                    </li>
+                    
+                    <li id="four">
+                        <span class="required" >Semester</span>
+                       <select name="Semester">
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                        <option value="V">V</option>
+                        <option value="VI">VI</option>
+                        <option value="VII">VII</option>
+                        <option value="VIII">VIII</option>
+                       </select>
+                    </li>
+                   
+                <li id="five">
+                    
+                    <button type="submit" class="btn btn-success"  >Continue </button>
+                    
+                </li>
+                   
+                </ul>
+               
+            </form>
+
+
+          </div>
+          </div>
+    </body>
+
+
+
+
+
+    <style>
+
+body{
+    margin:0;
+    background-color: #034f84;
+    height:auto;
+}
+
+
+/* Navigation bar */
+.Navigation{
+  
+  position:relative;
+  background-color: green;
+  top:-5px;
+  height:55px;
+  width:100%;
+  color:aliceblue;
+  font-size: large;
+  
+  margin:0;
+  
+  
+}
+
+.Navigation span{
+    position:relative;
+    top:10px;
+    left:15px;
+}
+
+.Navigation h1{
+    position:absolute;
+    left:300px;
+    top:1px;
+}
+
+/*     CREATE AREA OF STUDENT             */
+.createStudent{
+    position:absolute;
+    left:108px;
+    background-color: antiquewhite;
+    height:280px;
+    width:65%;
+    margin:15px;
+    display: inline-block;
+    box-shadow: 10px 8px 17px 11px rgba(0, 0, 0, 0.2);
+    border:2px solid black;
+    border-radius: 0.5rem;
+}
+ul li{
+   list-style-type: none;
+}
+
+ul li:nth-child(even){
+    display: inline;
+}
+
+
+/*      FOR ALL INPUT TAG IN CREATE AREA            */
+ul li input{
+    
+    width:300px;
+    height:29px;
+}
+
+/*      FOR SELECT TAG IN CREATE AREA            */
+ul li select {
+    width:300px;
+    height:29px;
+}
+
+/*TO ADD  ASTERISK TO REAQUIRE */
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+
+
+/*     FIRST NAME             */
+#one{
+    position:absolute;
+    top:14%;
+    left:7%;
+}
+#one span{
+    position:absolute;
+    top:-30px;
+    left:-6%;
+}
+
+
+/*    LAST NAME              */
+
+#two{
+    position:absolute;
+    left:50%;
+    top:14%;
+}
+
+#two span{
+    position:absolute;
+    left:-2%;
+    top:-30px;
+}
+
+/*    ROLL NO              */
+#three{
+    position:absolute;
+    top:36%;
+    left:7%;
+}
+#three span{
+    position:absolute;
+    top:-27px;
+    left:-6%;
+}
+
+
+/*           SEMESTER       */
+#four{
+    position:absolute;
+    left:50%;
+    top:36%;
+}
+
+#four span{
+    position:absolute;
+    left:-4%;
+    top:-24px;
+}
+
+
+
+
+/*          CREATE BUTTON        */
+#five{
+    position:absolute;
+    left:76%;
+    top:80%;
+}
+
+  
+    </style>
+</html> 

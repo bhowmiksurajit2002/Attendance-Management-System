@@ -1,0 +1,136 @@
+body{
+    margin:0;
+  border:10px solid black;
+}
+.Navigation{
+  
+    position:sticky;
+    background-color: green;
+    height:50px;
+    width:100%;
+    color:aliceblue;
+    font-size: large;
+    text-align: center;
+    margin:0;
+    
+    
+  }
+
+
+
+
+.Navigation h1{
+position:relative;
+left:0px;
+top:6px;
+font-size: 30px;
+color:rgb(245, 237, 238);
+}
+
+
+
+
+.add_student{
+position:absolute;
+padding:0;
+margin:0;
+top:81px;
+height:57px;
+width:400px;
+color:white;
+
+background-color: #0d7ece;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+}
+.add_student h2{
+    position:relative;
+    left:33px;
+    
+}
+.add_teacher{
+position:absolute;
+height:57px;
+top:158px;
+padding:0;
+margin:0;
+width:400px;
+color:white;
+
+background-color: #0d7ece;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.add_teacher h2{
+    position:relative;
+    left:33px;
+    
+}
+.assign_teacher{
+    position:absolute;
+    height:57px;
+    width:400px;
+    top: 237px;
+    color:white;
+
+    background-color: #0d7ece;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.assign_teacher h2{
+    position:relative;
+    left:33px;
+   
+}
+
+.log-out{
+    position:absolute;
+    height:57px;
+    width:400px;
+    top: 308px;
+    color:white;
+
+    background-color: #0d7ece;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.log-out h2{
+    position:relative;
+    left:33px;
+   
+}
+
+
+.dashboard{
+    position:relative;
+    top:-20px;
+    background-color:#0d7ece;
+    width:404px;
+    height:100%;
+}
+
+a:hover div{
+    background-color: #034f84;
+}
+
+.main-container{
+    background-color: antiquewhite;
+    position:absolute;
+    height:89%;
+    width:70%;
+    margin:15px;
+   
+}
+.main-container h1{
+    position:relative;
+    left:10px;
+    color: #0d7ece;
+    
+}
+.main-container a{
+    text-decoration: none;
+}
+
+.main-container a:hover div{
+   transform: scale(1.1,1.1);
+  
+}
